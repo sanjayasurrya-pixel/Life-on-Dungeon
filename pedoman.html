@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buku Pedoman &mdash; Life of Dungeon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pedoman.css">
+</head>
+<body>
+
+<nav class="floatnav" aria-label="Navigasi bab">
+  <div class="floatnav-fill" id="navFill" aria-hidden="true"></div>
+  <a href="#tentang">Tentang</a>
+  <a href="#aturan">Aturan</a>
+  <a href="#petak">Petak</a>
+  <a href="#kartu">Kartu</a>
+  <a href="#properti">Properti</a>
+  <a href="#akhir">Menang</a>
+  <span class="floatnav-sep" aria-hidden="true"></span>
+  <a href="index.html" class="nav-spinner">Spinner</a>
+</nav>
+
+<header class="masthead">
+  <svg class="crown" viewBox="0 0 100 64" aria-hidden="true">
+    <defs>
+      <linearGradient id="goldG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#f3d27c"/>
+        <stop offset=".55" stop-color="#d9a94a"/>
+        <stop offset="1" stop-color="#8a5c14"/>
+      </linearGradient>
+    </defs>
+    <path d="M10 52 L6 16 L30 34 L50 6 L70 34 L94 16 L90 52 Z" fill="url(#goldG)" stroke="#6e4710" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="10" y="50" width="80" height="10" rx="5" fill="url(#goldG)" stroke="#6e4710" stroke-width="3"/>
+    <circle cx="50" cy="14" r="5" fill="#f3d27c" stroke="#6e4710" stroke-width="2.5"/>
+    <circle cx="6" cy="16" r="4" fill="#f3d27c" stroke="#6e4710" stroke-width="2.5"/>
+    <circle cx="94" cy="16" r="4" fill="#f3d27c" stroke="#6e4710" stroke-width="2.5"/>
+  </svg>
+  <h1>Life of Dungeon</h1>
+  <p class="edition">Buku Pedoman &amp; Peraturan &mdash; Edisi Meja</p>
+  <ul class="factline">
+    <li>2&ndash;4 pemain</li>
+    <li>Modal awal 100 Koin</li>
+    <li>45 kartu tantangan</li>
+    <li>Estimasi 30&ndash;45 menit</li>
+  </ul>
+  <a class="back-link" href="index.html">&larr; Kembali ke permainan</a>
+</header>
+
+<nav class="toc" aria-label="Daftar isi">
+  <ol>
+    <li><a href="#tentang">Tentang permainan</a></li>
+    <li><a href="#aturan">Aturan dasar</a></li>
+    <li><a href="#petak">Jenis petak</a></li>
+    <li><a href="#kartu">Kartu dalam permainan</a></li>
+    <li><a href="#properti">Properti &amp; sewa</a></li>
+    <li><a href="#akhir">Menang &amp; saran bermain</a></li>
+  </ol>
+</nav>
+
+<main class="book">
+
+  <section id="tentang">
+    <h2>Tentang permainan</h2>
+    <p>Life of Dungeon adalah permainan papan strategi dan keberuntungan bertema kerajaan dan dungeon. Kamu mengelola Koin, memutar spinner, membeli rumah, dan memakai kartu di momen yang tepat &mdash; semua demi menjadi pemain dengan kekayaan tertinggi di akhir permainan.</p>
+    <blockquote>Setiap petak adalah cerita. Setiap putaran spinner adalah takdir.</blockquote>
+    <h3>Komponen di dalam kotak</h3>
+    <ul class="komponen">
+      <li>Papan jalur ular-tangga bertema fantasy</li>
+      <li>Spinner 6 warna (angka 1&ndash;6)</li>
+      <li>4 pion karakter</li>
+      <li>12 Kartu Action &amp; 45 Kartu Tantangan</li>
+      <li>4 Kartu Spesial: Attack Basic, Attack Expert, Payday, Gacha</li>
+      <li>Kartu Properti (2 jenis rumah) &amp; koin emas</li>
+    </ul>
+  </section>
+
+  <section id="aturan">
+    <h2>Aturan dasar</h2>
+
+    <article>
+      <h3>Peraturan umum</h3>
+      <ol>
+        <li>Dimainkan 2&ndash;4 pemain, masing-masing memakai 1 pion karakter.</li>
+        <li>Modal awal: 100 Koin dan 4 kartu Battle.</li>
+        <li>Mulai dari petak START, bergerak searah jarum jam.</li>
+        <li>Semua transaksi melewati Menteri Keuangan.</li>
+      </ol>
+    </article>
+
+    <article>
+      <h3>Peraturan spinner</h3>
+      <ol>
+        <li>Wajib diputar di awal giliran. Angka (1&ndash;6) = jumlah langkah pion.</li>
+        <li>Warna merah dan hitam menentukan harga beli/jual kartu dan properti.</li>
+        <li>Spinner juga dipakai untuk efek kartu Payday dan Gacha.</li>
+        <li>Pemain yang kalah battle mundur sebanyak angka spin.</li>
+      </ol>
+    </article>
+
+    <article>
+      <h3>Peraturan pergerakan</h3>
+      <ol>
+        <li>Pemain bergerak sesuai angka spinner, lalu wajib menjalankan instruksi petak tempat berhenti.</li>
+        <li>Giliran berpindah setelah seluruh instruksi selesai.</li>
+        <li>Pemain bangkrut dinyatakan eliminasi.</li>
+      </ol>
+    </article>
+  </section>
+
+  <section id="petak">
+    <h2>Jenis petak</h2>
+    <div class="petak-grid">
+      <article class="petak petak-gold">
+        <h3>Harta Karun</h3>
+        <p class="tag">+ Koin</p>
+        <p>Kamu berhak menerima koin dari Menteri sebesar angka hasil spin. Semakin tinggi angka, semakin banyak koin.</p>
+      </article>
+      <article class="petak petak-red">
+        <h3>Battle</h3>
+        <p class="tag">Mundur</p>
+        <p>Pilih 1 lawan untuk diserang, gunakan kartu Attack. Yang kalah mundur sesuai angka spin. Jika kartu battle habis, ambil 2 kartu baru.</p>
+      </article>
+      <article class="petak petak-purple">
+        <h3>Istana</h3>
+        <p class="tag">Sewa 10/15 Koin</p>
+        <p>Beli wilayah yang belum dimiliki. Harga tergantung warna spinner. Berhenti di rumah pemain lain: bayar sewa.</p>
+      </article>
+      <article class="petak petak-card">
+        <h3>Petak Kartu</h3>
+        <p class="tag">Action &amp; Tantangan</p>
+        <p>Tanda seru putih: ambil Kartu Action. Tanda seru hitam: ambil Kartu Tantangan. Efek kartu wajib dijalankan sebelum giliran berpindah.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="kartu">
+    <h2>Kartu dalam permainan</h2>
+
+    <h3>Kartu Action (12 kartu)</h3>
+    <p>Semua efek ini wajib dijalankan. Jika koinmu tidak cukup untuk membayar, kamu wajib menjual aset atau berhutang ke Menteri Keuangan.</p>
+    <div class="table-wrap"><table>
+      <thead>
+        <tr><th scope="col">Kartu</th><th scope="col">Efek</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Pajak Kerajaan</td><td>Bayar 3 Koin ke bank</td></tr>
+        <tr><td>Hadiah Raja</td><td>+5 Koin dari bank</td></tr>
+        <tr><td>Serangan Bandit</td><td>Kehilangan 2 Koin</td></tr>
+        <tr><td>Bantuan Rakyat</td><td>+3 Koin dari bank</td></tr>
+        <tr><td>Undangan Istana</td><td>Maju 2 petak</td></tr>
+        <tr><td>Jalan Tersembunyi</td><td>Mundur 2 petak</td></tr>
+        <tr><td>Perdagangan Kerajaan</td><td>Tukar 2 Koin menjadi 5 Koin</td></tr>
+        <tr><td>Festival Kerajaan</td><td>Semua pemain +2 Koin</td></tr>
+        <tr><td>Perintah Raja</td><td>Lewati 1 giliran</td></tr>
+        <tr><td>Keberuntungan Pedagang</td><td>Ambil 1 kartu tambahan</td></tr>
+        <tr><td>Penjaga Gerbang</td><td>Bayar 2 Koin untuk lewat</td></tr>
+        <tr><td>Harta Karun</td><td>+4 Koin dari bank</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Kartu Spesial (4 kartu)</h3>
+    <ul class="spesial">
+      <li><strong>Attack Basic</strong> &mdash; serangan standar di petak Battle, mengurangi 1 Mana lawan. ATK 1&ndash;3.</li>
+      <li><strong>Attack Expert</strong> &mdash; serangan tingkat tinggi, mengurangi 2&ndash;3 Mana lawan. ATK 4&ndash;6. Hanya di petak Battle.</li>
+      <li><strong>Event Treasure (Payday)</strong> &mdash; putar spinner; warna plus angka menentukan hadiah Koin sesuai tabel Payday.</li>
+      <li><strong>Gacha &mdash; Roda Takdir</strong> &mdash; hasil spinner menentukan reward atau penalti acak.</li>
+    </ul>
+
+    <h3>45 Kartu Tantangan (7 kategori)</h3>
+    <p>Ditarik saat pion mendarat di petak tanda seru hitam.</p>
+    <div class="table-wrap"><table>
+      <thead>
+        <tr><th scope="col">Kategori</th><th scope="col">Jumlah</th><th scope="col">Contoh kartu</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Direct Attack</td><td>5 kartu</td><td>Tebasan Kilat, Amukan Monster</td></tr>
+        <tr><td>Magic &amp; Mana</td><td>5 kartu</td><td>Ledakan Bola Api, Meditasi Gua</td></tr>
+        <tr><td>Traps &amp; Hazards</td><td>5 kartu</td><td>Jebakan Duri, Pintu Terkunci</td></tr>
+        <tr><td>Treasure &amp; Gacha</td><td>5 kartu</td><td>Harta Karun Naga, Kotak Pandora</td></tr>
+        <tr><td>Chaos &amp; Mayhem</td><td>5 kartu</td><td>Pencuri Licik, Pertukaran Dimensi</td></tr>
+        <tr><td>Boss &amp; Economy</td><td>5 kartu</td><td>Penjaga Gerbang, Pajak Dungeon</td></tr>
+        <tr><td>Eksplorasi &amp; Taktik</td><td>15 kartu</td><td>Kunci Kerangka, Pahlawan Dungeon</td></tr>
+      </tbody>
+    </table></div>
+    <p class="contoh">Contoh kartu &mdash; <strong>Tebasan Kilat</strong> (Direct Attack): putar spinner. Ganjil: berikan 2 damage ke pemain di petak terdekat. Genap: kamu sendiri kehilangan 1 Mana.</p>
+    <p class="contoh">Contoh kartu &mdash; <strong>Harta Karun Naga</strong> (Treasure): ambil langsung 6 Koin emas dari bank, tanpa spin dan tanpa syarat.</p>
+    <p class="contoh">Contoh kartu Eksplorasi: <strong>Kunci Kerangka</strong> (buka 1 pintu terkunci gratis), <strong>Mata Air Penyembuhan</strong> (pulihkan 2 Mana atau +2 Koin), <strong>Lorong Berduri</strong> (bayar 1 Koin atau mundur 1 petak), <strong>Sergapan Orc</strong> (battle mendadak, ATK 2), <strong>Gulungan Penyihir</strong> (+1 pada Attack berikutnya).</p>
+  </section>
+
+  <section id="properti">
+    <h2>Properti &amp; sewa</h2>
+    <p>Untuk membeli, kamu harus berhenti tepat di petak properti yang belum dimiliki, lalu memutar spinner: warna merah memakai harga merah, warna hitam memakai harga hitam. Tidak boleh membeli jika koin tidak cukup.</p>
+    <div class="table-wrap"><table>
+      <thead>
+        <tr><th scope="col">Rumah</th><th scope="col">Harga beli (merah / hitam)</th><th scope="col">Harga jual (merah / hitam)</th><th scope="col">Sewa</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Pondok Perkampungan <span class="tier">Tier 1 &mdash; Subur Vale</span></td><td>30 / 50 Koin</td><td>60 / 75 Koin</td><td>10 Koin</td></tr>
+        <tr><td>Rumah Batu Gothic <span class="tier">Tier 2 &mdash; Benteng Lembah Berkabut</span></td><td>40 / 60 Koin</td><td>65 / 80 Koin</td><td>15 Koin</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="akhir">
+    <h2>Menang &amp; saran bermain</h2>
+    <article>
+      <h3>Perhitungan akhir</h3>
+      <p>Pemenang adalah pemain dengan kekayaan bersih tertinggi: total Koin ditambah nilai rumah dan aset, dikurangi seluruh utang. Jika seri, pemilik rumah terbanyak menang.</p>
+    </article>
+    <article>
+      <h3>Saran dari sang Menteri</h3>
+      <ul>
+        <li><strong>Kelola koin.</strong> Sisihkan modal untuk sewa mendadak; jangan habiskan seluruh koin dalam satu ronde pembelian.</li>
+        <li><strong>Investasi properti.</strong> Pondok lebih murah, Batu Gothic sewanya lebih tinggi. Campur tipe rumah agar pendapatan stabil.</li>
+        <li><strong>Kartu adalah senjata.</strong> Simpan kartu Spesial untuk momen krusial &mdash; Attack Expert bisa membalik kekalahan menjadi kemenangan.</li>
+      </ul>
+    </article>
+    <p class="closing">Selamat menjelajah, calon Raja Dungeon!</p>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <p>~ Life of Dungeon ~</p>
+  <p>Terima kasih &middot; Selamat bermain &middot; Edisi Meja</p>
+</footer>
+
+<script>
+(function () {
+  var nav = document.querySelector('.floatnav');
+  var fill = document.getElementById('navFill');
+  var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+  var sections = links.map(function (a) {
+    return document.getElementById(a.getAttribute('href').slice(1));
+  });
+
+  function setFill(link) {
+    fill.style.left = link.offsetLeft + 'px';
+    fill.style.width = link.offsetWidth + 'px';
+  }
+
+  function update() {
+    var pos = window.scrollY + 130;
+    var current = sections[0];
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i] && sections[i].offsetTop <= pos) current = sections[i];
+    }
+    var idx = sections.indexOf(current);
+    links.forEach(function (a, i) { a.classList.toggle('active', i === idx); });
+    setFill(links[idx]);
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+  update();
+})();
+</script>
+
+</body>
+</html>
+

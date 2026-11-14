@@ -396,3 +396,77 @@
       transform: none;
     }
   }
+
+  .guide-link {
+    margin-top: 14px;
+    text-align: center;
+  }
+  .guide-link a {
+    color: var(--parchment);
+    font-style: italic;
+    font-size: .95rem;
+    text-decoration-color: rgba(246, 233, 201, .4);
+    text-underline-offset: 3px;
+  }
+  .guide-link a:hover, .guide-link a:focus-visible { color: var(--gold-hi); }
+
+  /* ============ nav floating ============ */
+  .floatnav {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 30;
+    background: rgba(251, 246, 233, .88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid #d9c9a4;
+    border-radius: 999px;
+    padding: 5px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .35);
+  }
+  .floatnav a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: .9rem;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .floatnav a:hover, .floatnav a:focus-visible { color: var(--ink); }
+  .floatnav a:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; }
+  .floatnav .nav-pedoman { color: var(--red); }
+  .floatnav .nav-pedoman:hover, .floatnav .nav-pedoman:focus-visible { color: #8f2318; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .floatnav a { transition: none; }
+  }
+
+  /* ============ responsif layar sempit ============ */
+  @media (max-width: 820px) {
+    .content { gap: 10px; }
+    .panel { border-radius: 20px; }
+    .panel::before { inset: 9px; border-radius: 13px; }
+  }
+
+  @media (max-width: 480px) {
+    .panel { border-radius: 16px; }
+    .panel::before { inset: 6px; border-radius: 10px; }
+    .crown { width: 54px; margin-top: -26px; }
+    .wheel-wrap { width: min(92vw, 400px); margin-top: 34px; }
+    .pointer { top: -30px; }
+    .num { font-size: clamp(1.4rem, 8.5vw, 2rem); }
+    .spin-btn { padding: 12px 16px; }
+    .divider { margin: 20px auto 16px; }
+    .site-footer { gap: 10px; letter-spacing: .2em; }
+    .site-footer::before, .site-footer::after { flex-basis: 24px; }
+    .floatnav { top: 10px; right: 10px; }
+    .floatnav a { font-size: .82rem; padding: 6px 12px; }
+  }
+
+  @media (max-width: 350px) {
+    body { padding: 12px 8px; }
+    .floatnav a { padding: 6px 10px; font-size: .78rem; }
+  }
+
