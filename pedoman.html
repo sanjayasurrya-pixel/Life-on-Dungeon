@@ -13,12 +13,14 @@
 
 <nav class="floatnav" aria-label="Navigasi bab">
   <div class="floatnav-fill" id="navFill" aria-hidden="true"></div>
-  <a href="#tentang">Tentang</a>
-  <a href="#aturan">Aturan</a>
-  <a href="#petak">Petak</a>
-  <a href="#kartu">Kartu</a>
-  <a href="#properti">Properti</a>
-  <a href="#akhir">Menang</a>
+  <div class="floatnav-scroll">
+    <a href="#tentang">Tentang</a>
+    <a href="#aturan">Aturan</a>
+    <a href="#petak">Petak</a>
+    <a href="#kartu">Kartu</a>
+    <a href="#properti">Properti</a>
+    <a href="#akhir">Menang</a>
+  </div>
   <span class="floatnav-sep" aria-hidden="true"></span>
   <a href="index.html" class="nav-spinner">Spinner</a>
 </nav>
@@ -232,14 +234,26 @@
 (function () {
   var nav = document.querySelector('.floatnav');
   var fill = document.getElementById('navFill');
+  var scroller = nav.querySelector('.floatnav-scroll');
   var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
   var sections = links.map(function (a) {
     return document.getElementById(a.getAttribute('href').slice(1));
   });
 
   function setFill(link) {
-    fill.style.left = link.offsetLeft + 'px';
-    fill.style.width = link.offsetWidth + 'px';
+    var max = scroller.clientWidth;
+    var left = scroller.offsetLeft + link.offsetLeft - scroller.scrollLeft;
+    var width = link.offsetWidth;
+    var visible = Math.max(left, scroller.offsetLeft);
+    var visibleEnd = Math.min(left + width, scroller.offsetLeft + max);
+    fill.style.left = Math.max(visible, scroller.offsetLeft) + 'px';
+    fill.style.width = Math.max(0, visibleEnd - visible) + 'px';
+  }
+
+  var smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  function centerLink(link) {
+    var target = link.offsetLeft - (scroller.clientWidth - link.offsetWidth) / 2;
+    scroller.scrollTo({ left: Math.max(0, target), behavior: smooth });
   }
 
   function update() {
@@ -251,11 +265,16 @@
     var idx = sections.indexOf(current);
     links.forEach(function (a, i) { a.classList.toggle('active', i === idx); });
     setFill(links[idx]);
+    centerLink(links[idx]);
   }
 
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
   window.addEventListener('load', update);
+  scroller.addEventListener('scroll', function () {
+    var active = nav.querySelector('a.active');
+    if (active) setFill(active);
+  }, { passive: true });
   update();
 })();
 </script>

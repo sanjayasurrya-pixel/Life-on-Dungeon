@@ -11,10 +11,11 @@
   const stops = [];
   for (let i = 0; i < SEGMENTS; i++) {
     const a = i * SEG_ANGLE;
-    stops.push(`${OUTER[i]} ${a + 1.5}deg ${a + SEG_ANGLE - 1.5}deg`);
+    const next = a + SEG_ANGLE;
+    stops.push(`${OUTER[i]} ${a + 2.5}deg ${next - 2.5}deg`);
+    stops.push(`var(--gold-dark) ${next - 2.5}deg ${next + 2.5}deg`);
   }
-  wheel.style.background =
-    `conic-gradient(#f6e9c9 0deg 1.5deg, ${stops.join(', ')}, #f6e9c9 ${360 - 1.5}deg 360deg)`;
+  wheel.style.background = `conic-gradient(${stops.join(', ')})`;
 
   const inner = ['var(--red) 0deg 36deg'];
   for (let i = 1; i < SEGMENTS; i++) {

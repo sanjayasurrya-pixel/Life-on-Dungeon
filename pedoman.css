@@ -49,6 +49,7 @@ a:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; }
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 5px;
+  overflow: hidden;
   box-shadow: 0 6px 24px rgba(74, 53, 28, .18);
 }
 .floatnav a {
@@ -65,6 +66,14 @@ a:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; }
 }
 .floatnav a:hover, .floatnav a:focus-visible { color: var(--ink); }
 .floatnav a.active { color: #fff; }
+.floatnav-scroll {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.floatnav-scroll::-webkit-scrollbar { display: none; }
 .floatnav-fill {
   position: absolute;
   top: 5px;
@@ -77,9 +86,9 @@ a:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; }
 }
 
 @media (max-width: 640px) {
-  .floatnav { gap: 0; max-width: calc(100% - 20px); overflow-x: auto; scrollbar-width: none; }
-  .floatnav::-webkit-scrollbar { display: none; }
+  .floatnav { max-width: calc(100% - 20px); }
   .floatnav a { padding: 6px 12px; font-size: .85rem; }
+  .floatnav .nav-spinner { flex: none; }
 }
 .floatnav-sep { width: 1px; height: 22px; background: var(--line); margin: 0 6px; flex: none; }
 .floatnav .nav-spinner { color: var(--red); }
