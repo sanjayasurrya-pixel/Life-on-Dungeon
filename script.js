@@ -47,11 +47,16 @@
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let audioCtx = null;
+  let lastTick = 0;
   function tick() {
+    const now = performance.now();
+    if (now - lastTick < 70) return;
+    lastTick = now;
     if (!audioCtx) {
       try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
       catch { return; }
     }
+    if (audioCtx.state === 'suspended') { audioCtx.resume(); return; }
     const t = audioCtx.currentTime;
     const osc = audioCtx.createOscillator();
     const gain = audioCtx.createGain();
@@ -82,11 +87,15 @@
     const start = performance.now();
     const duration = reduceMotion ? 400 : 5200;
     let lastSegment = segmentAt(current);
+    let lastRot = -1;
 
     function frame(now) {
       const p = Math.min((now - start) / duration, 1);
       const rot = current + (target - current) * easeOutCubic(p);
-      wheel.style.transform = `rotate(${rot}deg)`;
+      if (rot !== lastRot) {
+        wheel.style.transform = `rotate(${rot}deg)`;
+        lastRot = rot;
+      }
 
       const seg = segmentAt(rot);
       if (seg !== lastSegment && !reduceMotion) tick();
