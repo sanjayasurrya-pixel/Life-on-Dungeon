@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buku Pedoman &mdash; Life of Dungeon</title>
+<title>Buku Pedoman &mdash; Life on Dungeon</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -40,12 +40,12 @@
     <circle cx="6" cy="16" r="4" fill="#f3d27c" stroke="#6e4710" stroke-width="2.5"/>
     <circle cx="94" cy="16" r="4" fill="#f3d27c" stroke="#6e4710" stroke-width="2.5"/>
   </svg>
-  <h1>Life of Dungeon</h1>
+  <h1>Life on Dungeon</h1>
   <p class="edition">Buku Pedoman &amp; Peraturan &mdash; Edisi Meja</p>
   <ul class="factline">
     <li>2&ndash;4 pemain</li>
     <li>Modal awal 100 Koin</li>
-    <li>45 kartu tantangan</li>
+    <li>24 kartu action &middot; 45 tantangan</li>
     <li>Estimasi 30&ndash;45 menit</li>
   </ul>
   <a class="back-link" href="index.html">&larr; Kembali ke permainan</a>
@@ -71,9 +71,9 @@
     <h3>Komponen di dalam kotak</h3>
     <ul class="komponen">
       <li>Papan jalur ular-tangga bertema fantasy</li>
-      <li>Spinner 6 warna (angka 1&ndash;6)</li>
+      <li>Spinner 10 warna (angka 1&ndash;10)</li>
       <li>4 pion karakter</li>
-      <li>12 Kartu Action &amp; 45 Kartu Tantangan</li>
+      <li>24 Kartu Action &amp; 45 Kartu Tantangan</li>
       <li>4 Kartu Spesial: Attack Basic, Attack Expert, Payday, Gacha</li>
       <li>Kartu Properti (2 jenis rumah) &amp; koin emas</li>
     </ul>
@@ -95,7 +95,7 @@
     <article>
       <h3>Peraturan spinner</h3>
       <ol>
-        <li>Wajib diputar di awal giliran. Angka (1&ndash;6) = jumlah langkah pion.</li>
+        <li>Wajib diputar di awal giliran. Angka (1&ndash;10) = jumlah langkah pion.</li>
         <li>Warna merah dan hitam menentukan harga beli/jual kartu dan properti.</li>
         <li>Spinner juga dipakai untuk efek kartu Payday dan Gacha.</li>
         <li>Pemain yang kalah battle mundur sebanyak angka spin.</li>
@@ -141,7 +141,7 @@
   <section id="kartu">
     <h2>Kartu dalam permainan</h2>
 
-    <h3>Kartu Action (12 kartu)</h3>
+    <h3>Kartu Action (24 kartu)</h3>
     <p>Semua efek ini wajib dijalankan. Jika koinmu tidak cukup untuk membayar, kamu wajib menjual aset atau berhutang ke Menteri Keuangan.</p>
     <div class="table-wrap"><table>
       <thead>
@@ -160,13 +160,25 @@
         <tr><td>Keberuntungan Pedagang</td><td>Ambil 1 kartu tambahan</td></tr>
         <tr><td>Penjaga Gerbang</td><td>Bayar 2 Koin untuk lewat</td></tr>
         <tr><td>Harta Karun</td><td>+4 Koin dari bank</td></tr>
+        <tr><td>Serangan Naga</td><td>Pilih satu pemain untuk mundur 3 petak</td></tr>
+        <tr><td>Jalan Rahasia</td><td>Maju 3 petak</td></tr>
+        <tr><td>Kutukan Penyihir</td><td>Pemain pilihanmu harus melewatkan 1 giliran</td></tr>
+        <tr><td>Perlindungan Ksatria</td><td>Abaikan efek negatif dari satu kartu yang diterima</td></tr>
+        <tr><td>Portal Ajaib</td><td>Pindah ke petak Action terdekat</td></tr>
+        <tr><td>Serangan Mendadak</td><td>Pilih satu pemain untuk mundur 2 petak</td></tr>
+        <tr><td>Berkah Kerajaan</td><td>Mainkan satu giliran tambahan</td></tr>
+        <tr><td>Jebakan Dungeon</td><td>Mundur 3 petak</td></tr>
+        <tr><td>Perintah Ratu</td><td>Tentukan satu pemain untuk maju 2 petak</td></tr>
+        <tr><td>Ramalan Penyihir</td><td>Lihat 3 kartu teratas dari tumpukan kartu Action, lalu pilih 1 kartu untuk digunakan</td></tr>
+        <tr><td>Perang Antar Kerajaan</td><td>Semua pemain melakukan suit. Pemain yang kalah harus melewatkan 1 giliran</td></tr>
+        <tr><td>Kebangkitan Pahlawan</td><td>Batalkan efek kartu Action yang baru saja diberikan kepadamu</td></tr>
       </tbody>
     </table></div>
 
     <h3>Kartu Spesial (4 kartu)</h3>
     <ul class="spesial">
-      <li><strong>Attack Basic</strong> &mdash; serangan standar di petak Battle, mengurangi 1 Mana lawan. ATK 1&ndash;3.</li>
-      <li><strong>Attack Expert</strong> &mdash; serangan tingkat tinggi, mengurangi 2&ndash;3 Mana lawan. ATK 4&ndash;6. Hanya di petak Battle.</li>
+      <li><strong>Attack Basic</strong> &mdash; serangan standar yang mengurangi 1 Mana lawan di petak Battle.</li>
+      <li><strong>Attack Expert</strong> &mdash; serangan tingkat tinggi yang mengurangi 2&ndash;3 Mana lawan di petak Battle.</li>
       <li><strong>Event Treasure (Payday)</strong> &mdash; putar spinner; warna plus angka menentukan hadiah Koin sesuai tabel Payday.</li>
       <li><strong>Gacha &mdash; Roda Takdir</strong> &mdash; hasil spinner menentukan reward atau penalti acak.</li>
     </ul>
@@ -200,8 +212,8 @@
         <tr><th scope="col">Rumah</th><th scope="col">Harga beli (merah / hitam)</th><th scope="col">Harga jual (merah / hitam)</th><th scope="col">Sewa</th></tr>
       </thead>
       <tbody>
-        <tr><td>Pondok Perkampungan <span class="tier">Tier 1 &mdash; Subur Vale</span></td><td>30 / 50 Koin</td><td>60 / 75 Koin</td><td>10 Koin</td></tr>
-        <tr><td>Rumah Batu Gothic <span class="tier">Tier 2 &mdash; Benteng Lembah Berkabut</span></td><td>40 / 60 Koin</td><td>65 / 80 Koin</td><td>15 Koin</td></tr>
+        <tr><td>Pondok Perkampungan <span class="tier">Tier 1 &mdash; Subur Vale</span></td><td>15 / 20 Koin</td><td>30 / 45 Koin</td><td>10 Koin</td></tr>
+        <tr><td>Rumah Batu Gothic <span class="tier">Tier 2 &mdash; Benteng Lembah Berkabut</span></td><td>20 / 25 Koin</td><td>35 / 50 Koin</td><td>15 Koin</td></tr>
       </tbody>
     </table></div>
   </section>
