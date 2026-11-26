@@ -133,12 +133,12 @@
 
   <section id="setup">
     <h2>Setup permainan</h2>
-    <p>Siapkan komponen ini sebelum giliran pertama dimulai. Susun papan di tengah, letakkan tumpukan kartu di sisi yang mudah dijangkau, dan pastikan setiap pemain punya koin awal serta kartu battle.</p>
+    <p>Siapkan komponen ini sebelum giliran pertama dimulai. Susun papan di tengah, letakkan tumpukan kartu di sisi yang mudah dijangkau, lalu siapkan setiap pemain.</p>
 
     <div class="setup-grid">
       <figure class="setup-item setup-map">
         <div class="setup-media">
-          <img src="images/papan permainan.png" alt="Papan permainan Life of Dungeon" loading="lazy">
+          <img src="images/papan permainan.webp" alt="Papan permainan Life of Dungeon" loading="lazy">
         </div>
         <figcaption>
           <span class="setup-name">Map</span>
@@ -147,7 +147,7 @@
       </figure>
 
       <figure class="setup-item">
-        <div class="setup-media"><img src="images/kartu action1.png" alt="Contoh kartu Action" loading="lazy"></div>
+        <div class="setup-media"><img src="images/kartu action1.webp" alt="Contoh kartu Action" loading="lazy"></div>
         <figcaption>
           <span class="setup-name">Kartu Action</span>
           <span class="setup-desc">Ambil saat mendarat di petak tanda seru putih.</span>
@@ -156,7 +156,7 @@
 
       <figure class="setup-item">
         <div class="setup-media">
-          <img src="images/kartu tantangan1.png" alt="Contoh kartu Tantangan" loading="lazy">
+          <img src="images/kartu tantangan1.webp" alt="Contoh kartu Tantangan" loading="lazy">
         </div>
         <figcaption>
           <span class="setup-name">Kartu Challenge</span>
@@ -165,7 +165,7 @@
       </figure>
 
       <figure class="setup-item">
-        <div class="setup-media"><img src="images/kartu wilayah.png" alt="Kartu Wilayah" loading="lazy"></div>
+        <div class="setup-media"><img src="images/kartu wilayah.webp" alt="Kartu Wilayah" loading="lazy"></div>
         <figcaption>
           <span class="setup-name">Kartu Wilayah</span>
           <span class="setup-desc">Menandai kepemilikan rumah, harga, dan nilai sewa.</span>
@@ -173,7 +173,7 @@
       </figure>
 
       <figure class="setup-item">
-        <div class="setup-media"><img src="images/kartu_spesial.png" alt="Kartu Battle dan kartu spesial" loading="lazy"></div>
+        <div class="setup-media"><img src="images/kartu_spesial.webp" alt="Kartu Battle dan kartu spesial" loading="lazy"></div>
         <figcaption>
           <span class="setup-name">Kartu Battle</span>
           <span class="setup-desc">Dipakai saat battle: Attack Basic, Attack Expert, Payday, dan Gacha.</span>
@@ -181,7 +181,7 @@
       </figure>
 
       <figure class="setup-item">
-        <div class="setup-media"><img src="images/desain koin.jpg" alt="Koin permainan" loading="lazy"></div>
+        <div class="setup-media"><img src="images/desain koin.webp" alt="Koin permainan" loading="lazy"></div>
         <figcaption>
           <span class="setup-name">Koin</span>
           <span class="setup-desc">Mata uang utama untuk beli, bayar sewa, dan menyelesaikan efek kartu.</span>
@@ -189,13 +189,28 @@
       </figure>
 
       <figure class="setup-item">
-        <div class="setup-media"><img src="images/kartu mana depan.png" alt="Kartu Mana" loading="lazy"></div>
+        <div class="setup-media"><img src="images/kartu mana depan.webp" alt="Kartu Mana" loading="lazy"></div>
         <figcaption>
           <span class="setup-name">Kartu Mana</span>
           <span class="setup-desc">Mana pemain saat menerima serangan atau efek kartu tertentu.</span>
         </figcaption>
       </figure>
     </div>
+
+    <ol class="setup-steps">
+      <li>
+        <span class="setup-step-title">Pilih pion</span>
+        <span class="setup-step-desc">Setiap pemain memilih satu pion karakter untuk digunakan di papan.</span>
+      </li>
+      <li>
+        <span class="setup-step-title">Ambil 100 koin</span>
+        <span class="setup-step-desc">Setiap pemain menerima modal awal 100 koin: 50, 20, 10, 10, 5, 2, 2, dan 1.</span>
+      </li>
+      <li>
+        <span class="setup-step-title">Ambil 4 kartu Battle</span>
+        <span class="setup-step-desc">Setiap pemain menerima 4 kartu Battle untuk digunakan saat bertarung.</span>
+      </li>
+    </ol>
   </section>
 
   <section id="petak">
@@ -375,6 +390,10 @@
   <p>Terima kasih &middot; Selamat bermain &middot; Edisi Meja</p>
 </footer>
 
+  <audio id="bgm" src="audio/backsound.mp3" loop preload="auto"></audio>
+  <button type="button" class="bgm-toggle" id="bgmToggle" aria-pressed="true" aria-label="Matikan musik latar">Musik</button>
+
+  <script src="bgm.js"></script>
   <script>
   (function () {
     var nav = document.querySelector('.floatnav');

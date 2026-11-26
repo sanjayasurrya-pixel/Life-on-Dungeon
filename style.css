@@ -20,6 +20,29 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  .bgm-toggle {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    z-index: 40;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid rgba(138, 92, 20, .45);
+    border-radius: 999px;
+    background: rgba(249, 239, 214, .94);
+    color: var(--ink);
+    font: 600 .88rem/1 'Lora', serif;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .bgm-toggle:hover, .bgm-toggle:focus-visible { background: #fff7e2; color: var(--ink); }
+  .bgm-toggle:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; }
+  .bgm-toggle svg { width: 18px; height: 18px; flex: none; }
+
   body {
     min-height: 100vh;
     font-family: 'Lora', serif;
