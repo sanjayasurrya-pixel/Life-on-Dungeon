@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -16,9 +16,10 @@
   <div class="floatnav-scroll">
     <a href="#tentang">Tentang</a>
     <a href="#aturan">Aturan</a>
+    <a href="#setup">Setup</a>
     <a href="#petak">Petak</a>
     <a href="#kartu">Kartu</a>
-    <a href="#properti">Properti</a>
+    <a href="#wilayah">Wilayah</a>
     <a href="#akhir">Menang</a>
   </div>
   <span class="floatnav-sep" aria-hidden="true"></span>
@@ -48,16 +49,34 @@
     <li>24 kartu action &middot; 45 tantangan</li>
     <li>Estimasi 30&ndash;45 menit</li>
   </ul>
-  <a class="back-link" href="index.html">&larr; Kembali ke permainan</a>
-</header>
+    <a class="back-link" href="index.html">&larr; Kembali ke permainan</a>
+
+    <div class="search-wrap" role="search">
+      <label class="search-label" for="ruleSearch">Cari di buku pedoman</label>
+      <div class="search-field">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="10.5" cy="10.5" r="5.5"/>
+          <path d="M15 15l4.5 4.5"/>
+        </svg>
+        <input id="ruleSearch" class="search-input" type="search" placeholder="Cari kartu, petak, atau aturan..." autocomplete="off" spellcheck="false">
+        <button type="button" class="search-clear" id="searchClear" aria-label="Hapus pencarian" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M6 6l12 12M18 6l-12 12"/>
+          </svg>
+        </button>
+      </div>
+      <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    </div>
+  </header>
 
 <nav class="toc" aria-label="Daftar isi">
   <ol>
     <li><a href="#tentang">Tentang permainan</a></li>
     <li><a href="#aturan">Aturan dasar</a></li>
+    <li><a href="#setup">Setup permainan</a></li>
     <li><a href="#petak">Jenis petak</a></li>
     <li><a href="#kartu">Kartu dalam permainan</a></li>
-    <li><a href="#properti">Properti &amp; sewa</a></li>
+    <li><a href="#wilayah">Wilayah &amp; sewa</a></li>
     <li><a href="#akhir">Menang &amp; saran bermain</a></li>
   </ol>
 </nav>
@@ -75,7 +94,7 @@
       <li>4 pion karakter</li>
       <li>24 Kartu Action &amp; 45 Kartu Tantangan</li>
       <li>4 Kartu Spesial: Attack Basic, Attack Expert, Payday, Gacha</li>
-      <li>Kartu Properti (2 jenis rumah) &amp; koin emas</li>
+      <li>Kartu Wilayah (2 jenis rumah) &amp; koin emas</li>
     </ul>
   </section>
 
@@ -96,7 +115,7 @@
       <h3>Peraturan spinner</h3>
       <ol>
         <li>Wajib diputar di awal giliran. Angka (1&ndash;10) = jumlah langkah pion.</li>
-        <li>Warna merah dan hitam menentukan harga beli/jual kartu dan properti.</li>
+        <li>Warna merah dan hitam menentukan harga beli/jual kartu dan wilayah.</li>
         <li>Spinner juga dipakai untuk efek kartu Payday dan Gacha.</li>
         <li>Pemain yang kalah battle mundur sebanyak angka spin.</li>
       </ol>
@@ -112,28 +131,142 @@
     </article>
   </section>
 
+  <section id="setup">
+    <h2>Setup permainan</h2>
+    <p>Siapkan komponen ini sebelum giliran pertama dimulai. Susun papan di tengah, letakkan tumpukan kartu di sisi yang mudah dijangkau, dan pastikan setiap pemain punya koin awal serta kartu battle.</p>
+
+    <div class="setup-grid">
+      <figure class="setup-item setup-map">
+        <div class="setup-media">
+          <img src="images/papan permainan.png" alt="Papan permainan Life of Dungeon" loading="lazy">
+        </div>
+        <figcaption>
+          <span class="setup-name">Map</span>
+          <span class="setup-desc">Papan jalur utama tempat pion bergerak dari START hingga akhir permainan.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="setup-item">
+        <div class="setup-media"><img src="images/kartu action1.png" alt="Contoh kartu Action" loading="lazy"></div>
+        <figcaption>
+          <span class="setup-name">Kartu Action</span>
+          <span class="setup-desc">Ambil saat mendarat di petak tanda seru putih.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="setup-item">
+        <div class="setup-media">
+          <img src="images/kartu tantangan1.png" alt="Contoh kartu Tantangan" loading="lazy">
+        </div>
+        <figcaption>
+          <span class="setup-name">Kartu Challenge</span>
+          <span class="setup-desc">Ambil saat mendarat di petak tanda seru hitam.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="setup-item">
+        <div class="setup-media"><img src="images/kartu wilayah.png" alt="Kartu Wilayah" loading="lazy"></div>
+        <figcaption>
+          <span class="setup-name">Kartu Wilayah</span>
+          <span class="setup-desc">Menandai kepemilikan rumah, harga, dan nilai sewa.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="setup-item">
+        <div class="setup-media"><img src="images/kartu_spesial.png" alt="Kartu Battle dan kartu spesial" loading="lazy"></div>
+        <figcaption>
+          <span class="setup-name">Kartu Battle</span>
+          <span class="setup-desc">Dipakai saat battle: Attack Basic, Attack Expert, Payday, dan Gacha.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="setup-item">
+        <div class="setup-media"><img src="images/desain koin.jpg" alt="Koin permainan" loading="lazy"></div>
+        <figcaption>
+          <span class="setup-name">Koin</span>
+          <span class="setup-desc">Mata uang utama untuk beli, bayar sewa, dan menyelesaikan efek kartu.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="setup-item">
+        <div class="setup-media"><img src="images/kartu mana depan.png" alt="Kartu Mana" loading="lazy"></div>
+        <figcaption>
+          <span class="setup-name">Kartu Mana</span>
+          <span class="setup-desc">Mana pemain saat menerima serangan atau efek kartu tertentu.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section id="petak">
     <h2>Jenis petak</h2>
+    <p>Papan memiliki enam jenis petak. Kenali ikonnya agar kamu tahu tindakan apa yang harus dilakukan saat pion berhenti.</p>
+
     <div class="petak-grid">
       <article class="petak petak-gold">
-        <h3>Harta Karun</h3>
-        <p class="tag">+ Koin</p>
-        <p>Kamu berhak menerima koin dari Menteri sebesar angka hasil spin. Semakin tinggi angka, semakin banyak koin.</p>
+        <div class="petak-head">
+          <span class="petak-icon petak-icon-treasure" aria-hidden="true"></span>
+          <div>
+            <h3>Treasure</h3>
+            <p class="tag">+ Koin</p>
+          </div>
+        </div>
+        <p>Kamu menerima koin dari Menteri sebesar angka hasil spin.</p>
       </article>
+
       <article class="petak petak-red">
-        <h3>Battle</h3>
-        <p class="tag">Mundur</p>
-        <p>Pilih 1 lawan untuk diserang, gunakan kartu Attack. Yang kalah mundur sesuai angka spin. Jika kartu battle habis, ambil 2 kartu baru.</p>
+        <div class="petak-head">
+          <span class="petak-icon petak-icon-battle" aria-hidden="true"></span>
+          <div>
+            <h3>Battle</h3>
+            <p class="tag">Serang</p>
+          </div>
+        </div>
+        <p>Pilih satu lawan, gunakan kartu Attack. Yang kalah mundur sesuai angka spin.</p>
       </article>
+
       <article class="petak petak-purple">
-        <h3>Istana</h3>
-        <p class="tag">Sewa 10/15 Koin</p>
-        <p>Beli wilayah yang belum dimiliki. Harga tergantung warna spinner. Berhenti di rumah pemain lain: bayar sewa.</p>
+        <div class="petak-head">
+          <span class="petak-icon petak-icon-wilayah" aria-hidden="true"></span>
+          <div>
+            <h3>Wilayah</h3>
+            <p class="tag">Beli / Sewa</p>
+          </div>
+        </div>
+        <p>Beli wilayah kosong atau bayar sewa saat berhenti di wilayah pemain lain.</p>
       </article>
+
       <article class="petak petak-card">
-        <h3>Petak Kartu</h3>
-        <p class="tag">Action &amp; Tantangan</p>
-        <p>Tanda seru putih: ambil Kartu Action. Tanda seru hitam: ambil Kartu Tantangan. Efek kartu wajib dijalankan sebelum giliran berpindah.</p>
+        <div class="petak-head">
+          <span class="petak-icon petak-icon-action" aria-hidden="true"></span>
+          <div>
+            <h3>Action</h3>
+            <p class="tag">Ambil kartu</p>
+          </div>
+        </div>
+        <p>Ambil satu Kartu Action dan jalankan efeknya sebelum giliran berpindah.</p>
+      </article>
+
+      <article class="petak petak-dark">
+        <div class="petak-head">
+          <span class="petak-icon petak-icon-challenge" aria-hidden="true"></span>
+          <div>
+            <h3>Challenges</h3>
+            <p class="tag">Tantangan</p>
+          </div>
+        </div>
+        <p>Ambil satu Kartu Tantangan. Selesaikan tantangannya sesuai instruksi kartu.</p>
+      </article>
+
+      <article class="petak petak-teal">
+        <div class="petak-head">
+          <span class="petak-icon petak-icon-spinner" aria-hidden="true"></span>
+          <div>
+            <h3>Spinner</h3>
+            <p class="tag">Putar lagi</p>
+          </div>
+        </div>
+        <p>Putar spinner untuk menentukan efek atau langkah tambahan sesuai aturan petak.</p>
       </article>
     </div>
   </section>
@@ -204,9 +337,9 @@
     <p class="contoh">Contoh kartu Eksplorasi: <strong>Kunci Kerangka</strong> (buka 1 pintu terkunci gratis), <strong>Mata Air Penyembuhan</strong> (pulihkan 2 Mana atau +2 Koin), <strong>Lorong Berduri</strong> (bayar 1 Koin atau mundur 1 petak), <strong>Sergapan Orc</strong> (battle mendadak, ATK 2), <strong>Gulungan Penyihir</strong> (+1 pada Attack berikutnya).</p>
   </section>
 
-  <section id="properti">
-    <h2>Properti &amp; sewa</h2>
-    <p>Untuk membeli, kamu harus berhenti tepat di petak properti yang belum dimiliki, lalu memutar spinner: warna merah memakai harga merah, warna hitam memakai harga hitam. Tidak boleh membeli jika koin tidak cukup.</p>
+  <section id="wilayah">
+    <h2>Wilayah &amp; sewa</h2>
+    <p>Untuk membeli, kamu harus berhenti tepat di petak wilayah yang belum dimiliki, lalu memutar spinner: warna merah memakai harga merah, warna hitam memakai harga hitam. Tidak boleh membeli jika koin tidak cukup.</p>
     <div class="table-wrap"><table>
       <thead>
         <tr><th scope="col">Rumah</th><th scope="col">Harga beli (merah / hitam)</th><th scope="col">Harga jual (merah / hitam)</th><th scope="col">Sewa</th></tr>
@@ -228,7 +361,7 @@
       <h3>Saran dari sang Menteri</h3>
       <ul>
         <li><strong>Kelola koin.</strong> Sisihkan modal untuk sewa mendadak; jangan habiskan seluruh koin dalam satu ronde pembelian.</li>
-        <li><strong>Investasi properti.</strong> Pondok lebih murah, Batu Gothic sewanya lebih tinggi. Campur tipe rumah agar pendapatan stabil.</li>
+        <li><strong>Investasi wilayah.</strong> Pondok lebih murah, Batu Gothic sewanya lebih tinggi. Campur tipe rumah agar pendapatan stabil.</li>
         <li><strong>Kartu adalah senjata.</strong> Simpan kartu Spesial untuk momen krusial &mdash; Attack Expert bisa membalik kekalahan menjadi kemenangan.</li>
       </ul>
     </article>
@@ -242,55 +375,160 @@
   <p>Terima kasih &middot; Selamat bermain &middot; Edisi Meja</p>
 </footer>
 
-<script>
-(function () {
-  var nav = document.querySelector('.floatnav');
-  var fill = document.getElementById('navFill');
-  var scroller = nav.querySelector('.floatnav-scroll');
-  var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
-  var sections = links.map(function (a) {
-    return document.getElementById(a.getAttribute('href').slice(1));
-  });
+  <script>
+  (function () {
+    var nav = document.querySelector('.floatnav');
+    var fill = document.getElementById('navFill');
+    var scroller = nav.querySelector('.floatnav-scroll');
+    var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+    var sections = links.map(function (a) {
+      return document.getElementById(a.getAttribute('href').slice(1));
+    });
 
-  function setFill(link) {
-    var max = scroller.clientWidth;
-    var left = scroller.offsetLeft + link.offsetLeft - scroller.scrollLeft;
-    var width = link.offsetWidth;
-    var visible = Math.max(left, scroller.offsetLeft);
-    var visibleEnd = Math.min(left + width, scroller.offsetLeft + max);
-    fill.style.left = Math.max(visible, scroller.offsetLeft) + 'px';
-    fill.style.width = Math.max(0, visibleEnd - visible) + 'px';
-  }
-
-  var smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
-  function centerLink(link) {
-    var target = link.offsetLeft - (scroller.clientWidth - link.offsetWidth) / 2;
-    scroller.scrollTo({ left: Math.max(0, target), behavior: smooth });
-  }
-
-  function update() {
-    var pos = window.scrollY + 130;
-    var current = sections[0];
-    for (var i = 0; i < sections.length; i++) {
-      if (sections[i] && sections[i].offsetTop <= pos) current = sections[i];
+    function setFill(link) {
+      var max = scroller.clientWidth;
+      var left = scroller.offsetLeft + link.offsetLeft - scroller.scrollLeft;
+      var width = link.offsetWidth;
+      var visible = Math.max(left, scroller.offsetLeft);
+      var visibleEnd = Math.min(left + width, scroller.offsetLeft + max);
+      fill.style.left = Math.max(visible, scroller.offsetLeft) + 'px';
+      fill.style.width = Math.max(0, visibleEnd - visible) + 'px';
     }
-    var idx = sections.indexOf(current);
-    links.forEach(function (a, i) { a.classList.toggle('active', i === idx); });
-    setFill(links[idx]);
-    centerLink(links[idx]);
-  }
 
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
-  window.addEventListener('load', update);
-  scroller.addEventListener('scroll', function () {
-    var active = nav.querySelector('a.active');
-    if (active) setFill(active);
-  }, { passive: true });
-  update();
-})();
-</script>
+    var smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    function centerLink(link) {
+      var target = link.offsetLeft - (scroller.clientWidth - link.offsetWidth) / 2;
+      scroller.scrollTo({ left: Math.max(0, target), behavior: smooth });
+    }
+
+    function update() {
+      var visibleLinks = links.filter(function (a) { return !a.hidden; });
+      var visibleSections = sections.filter(function (s) { return s && !s.hidden; });
+      if (!visibleLinks.length || !visibleSections.length) {
+        fill.style.width = '0px';
+        return;
+      }
+      var pos = window.scrollY + 130;
+      var current = visibleSections[0];
+      for (var i = 0; i < visibleSections.length; i++) {
+        if (visibleSections[i].offsetTop <= pos) current = visibleSections[i];
+      }
+      var idx = sections.indexOf(current);
+      links.forEach(function (a, i) { a.classList.toggle('active', i === idx); });
+      if (links[idx] && !links[idx].hidden) {
+        setFill(links[idx]);
+        centerLink(links[idx]);
+      }
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    scroller.addEventListener('scroll', function () {
+      var active = nav.querySelector('a.active');
+      if (active) setFill(active);
+    }, { passive: true });
+
+    var searchInput = document.getElementById('ruleSearch');
+    var searchClear = document.getElementById('searchClear');
+    var searchStatus = document.getElementById('searchStatus');
+    var toc = document.querySelector('.toc');
+    var book = document.querySelector('.book');
+    var tocLinks = Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]'));
+    var emptyMsg = document.createElement('p');
+    emptyMsg.className = 'search-empty';
+    emptyMsg.hidden = true;
+    emptyMsg.innerHTML = '<strong>Tidak ada hasil</strong>Coba kata lain, misalnya "battle", "sewa", atau "naga".';
+    book.parentNode.insertBefore(emptyMsg, book);
+
+    function normalize(text) {
+      return (text || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+    }
+
+    function sectionItems(section) {
+      return Array.prototype.slice.call(section.querySelectorAll(
+        '.petak, tbody tr, .spesial li, .komponen li, #aturan article, .contoh, .setup-item'
+      ));
+    }
+
+    function applySearch() {
+      var raw = searchInput.value;
+      var query = normalize(raw);
+      searchClear.hidden = raw.length === 0;
+
+      sections.forEach(function (section) {
+        if (!section) return;
+        var items = sectionItems(section);
+        var sectionMatch = !query || normalize(section.textContent).indexOf(query) !== -1;
+        var visibleCount = 0;
+
+        items.forEach(function (item) {
+          var match = !query || normalize(item.textContent).indexOf(query) !== -1;
+          var show = !query || match;
+          item.hidden = !show;
+          if (show) visibleCount++;
+        });
+
+        var hasItems = items.length > 0;
+        var showSection = !query || (hasItems ? visibleCount > 0 : sectionMatch);
+        section.hidden = !showSection;
+
+        var tocLink = tocLinks.find(function (a) { return a.getAttribute('href') === '#' + section.id; });
+        if (tocLink) tocLink.parentElement.hidden = !showSection;
+
+        var navLink = links.find(function (a) { return a.getAttribute('href') === '#' + section.id; });
+        if (navLink) navLink.hidden = !showSection;
+
+        Array.prototype.slice.call(section.querySelectorAll('.table-wrap')).forEach(function (wrap) {
+          var rows = wrap.querySelectorAll('tbody tr');
+          var any = Array.prototype.some.call(rows, function (r) { return !r.hidden; });
+          var hideBlock = !!(query && !any);
+          wrap.hidden = hideBlock;
+          var prev = wrap.previousElementSibling;
+          var steps = 0;
+          while (prev && steps < 3) {
+            if (prev.tagName === 'H3') { prev.hidden = hideBlock; break; }
+            if (prev.tagName === 'P') { prev.hidden = hideBlock; }
+            prev = prev.previousElementSibling;
+            steps++;
+          }
+        });
+      });
+
+      var visibleSections = sections.filter(function (s) { return s && !s.hidden; });
+      toc.hidden = query && visibleSections.length === 0;
+      emptyMsg.hidden = !(query && visibleSections.length === 0);
+
+      if (!query) {
+        searchStatus.textContent = '';
+      } else if (visibleSections.length === 0) {
+        searchStatus.textContent = 'Tidak ada bagian yang cocok dengan "' + raw.trim() + '".';
+      } else {
+        var label = visibleSections.length === 1 ? 'bagian' : 'bagian';
+        searchStatus.textContent = visibleSections.length + ' ' + label + ' ditemukan.';
+      }
+
+      update();
+    }
+
+    searchInput.addEventListener('input', applySearch);
+    searchClear.addEventListener('click', function () {
+      searchInput.value = '';
+      searchInput.focus();
+      applySearch();
+    });
+    searchInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && searchInput.value) {
+        searchInput.value = '';
+        applySearch();
+      }
+    });
+
+    update();
+  })();
+  </script>
 
 </body>
 </html>
+
 
